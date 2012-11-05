@@ -17,9 +17,7 @@ FastFixedSizeQueue.prototype = {
 		}
 
 		this.data[(this.headIndex + this.queueLength) % this.queueSize] = value;
-		this.queueLength += 1;
-
-		return this.queueLength;
+		return ++this.queueLength;
 	},
 
 	dequeue: function () {
