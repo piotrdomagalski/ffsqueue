@@ -5,7 +5,7 @@ function ArrayQueue(size) {
 		throw Error('Invalid queue size');
 	}
 	this.queueSize = size;
-	this.data = new Array(this.queueSize);
+	this.data = [];
 }
 
 ArrayQueue.prototype = {
@@ -18,7 +18,7 @@ ArrayQueue.prototype = {
 	},
 
 	dequeue: function () {
-		return this.data.pop();
+		return this.data.shift();
 	},
 
 	peek: function () {
@@ -34,6 +34,6 @@ ArrayQueue.prototype = {
 	},
 
 	clear: function () {
-		this.data = new Array(this.queueSize);
+		this.data = [];
 	}
 };

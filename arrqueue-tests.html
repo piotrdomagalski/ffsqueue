@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>QUnit - arrqueue</title>
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.10.0.css">
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<script src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
+
+		<script src="arrqueue.js"></script>
+		<script>
+			test("Invalid queue size", function () {
+				raises(function () {
+					var q = new ArrayQueue(-1);
+				}, Error, "Must raise an Error");
+			});
+
+			test("Zero-sized queue", function () {
+				var q = new ArrayQueue(0);
+
+				strictEqual(q.length, 0);
+				strictEqual(q.enqueue(1), -1);
+				strictEqual(q.length, 0);
+				strictEqual(q.dequeue(), undefined);
+			});
+
+			test("Enqueue test", function () {
+				var q = new ArrayQueue(5);
+
+				strictEqual(q.length, 0);
+
+				strictEqual(q.enqueue(1), 1);
+				strictEqual(q.length, 1);
+
+				strictEqual(q.enqueue(2), 2);
+				strictEqual(q.length, 2);
+
+				strictEqual(q.enqueue(3), 3);
+				strictEqual(q.length, 3);
+
+				strictEqual(q.enqueue(4), 4);
+				strictEqual(q.length, 4);
+
+				strictEqual(q.enqueue(5), 5);
+				strictEqual(q.length, 5);
+
+				strictEqual(q.enqueue(6), -1);
+				strictEqual(q.length, 5);
+
+				strictEqual(q.enqueue(7), -1);
+				strictEqual(q.length, 5);
+			});
+
+			test("Dequeue test", function () {
+				var q = new ArrayQueue(5);
+
+				strictEqual(q.length, 0);
+
+				strictEqual(q.enqueue(1), 1);
+				strictEqual(q.length, 1);
+				strictEqual(q.dequeue(), 1);
+
+				strictEqual(q.enqueue(1), 1);
+				strictEqual(q.length, 1);
+				strictEqual(q.enqueue(2), 2);
+				strictEqual(q.length, 2);
+
+				strictEqual(q.dequeue(), 1);
+				strictEqual(q.length, 1);
+				strictEqual(q.dequeue(), 2);
+				strictEqual(q.length, 0);
+				strictEqual(q.dequeue(), undefined);
+			});
+
+			test("Clear test", function () {
+				var q = new ArrayQueue(5);
+
+				strictEqual(q.enqueue(1), 1);
+				strictEqual(q.length, 1);
+
+				q.clear();
+
+				strictEqual(q.enqueue(1234), 1);
+				strictEqual(q.length, 1);
+				strictEqual(q.dequeue(), 1234);
+			});
+		</script>
+	</body>
+</html>
