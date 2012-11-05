@@ -8,7 +8,7 @@ function ArrayQueue(size) {
 	this.data = new Array(this.queueSize);
 }
 
-ArraySizeQueue.prototype = {
+ArrayQueue.prototype = {
 	enqueue: function (value) {
 		if (this.data.length >= this.queueSize) {
 			return -1;
