@@ -14,23 +14,14 @@ ArrayQueue.prototype = {
 			return -1;
 		}
 
-		this.data.push(value);
-		return this.data.length;
+		return this.data.push(value);
 	},
 
 	dequeue: function () {
-		if (this.data.length <= 0) {
-			return undefined;
-		}
-
 		return this.data.pop();
 	},
 
 	peek: function () {
-		if (this.data.length <= 0) {
-			return undefined;
-		}
-
 		return this.data[0];
 	},
 
