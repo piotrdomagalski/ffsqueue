@@ -1,7 +1,10 @@
 ffsqueue - Fast Fixed Size Queue
 ================================
 
-Fast and clean implementation of a fixed size queue in JavaScript.
+Fast and clean implementation of a fixed size queue in JavaScript. 
+
+It avoids the use of `push()` and `unshift()` methods of Array object and should therefore not cause 
+any object (re)allocations.
 
 Is it really faster than a regular Array?
 -----------------------------------------
