@@ -3,7 +3,7 @@ ffsqueue - Fast Fixed Size Queue
 
 Fast and clean implementation of a fixed size queue in JavaScript. 
 
-Is it really faster than a regular Array?
+Is it really fast?
 -----------------------------------------
 
 Check it with a sample use case here: <http://jsperf.com/ffsqueue>
