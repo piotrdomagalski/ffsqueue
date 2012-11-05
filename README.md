@@ -1,4 +1,4 @@
 ffsqueue - Fast Fixed Size Queue
 ================================
 
-Clean and fast implementation of a fixed size queue in JavaScript.
+Fast and clean implementation of a fixed size queue in JavaScript.
