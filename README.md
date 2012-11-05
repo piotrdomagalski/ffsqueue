@@ -2,7 +2,7 @@ ffsqueue - Fast Fixed Size Queue
 ================================
 
 Fast and clean implementation of a fixed size queue in JavaScript. I created it as I wanted to optimize my
-code which was heavily using queue based on `Array` and it's `push()` and `unshift()` methods.
+code which was heavily using queue based on `Array` and its `push()` and `unshift()` methods.
 
 Is it really fast?
 ------------------
