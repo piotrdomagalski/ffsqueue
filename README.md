@@ -8,7 +8,7 @@ Is it really fast?
 
 Check it with a sample use case here: <http://jsperf.com/ffsqueue>
 
-Currently, it is faster in Chromium but not in Firefox.
+Currently, it is faster in Chromium 22.0 and Opera 12.02 but not in Firefox 16.
 
 License
 -------
