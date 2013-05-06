@@ -10,7 +10,7 @@ Is it really fast?
 Check it with a sample use case here: <http://jsperf.com/ffsqueue>
 
 Currently, it is faster compared to equivalent use of `Array` in Chromium 22.0 and Opera 12.02 but not in
-Firefox 16. The firefox case still needs to be investigated.
+Firefox 16. The Firefox case still needs to be investigated.
 
 License
 -------
